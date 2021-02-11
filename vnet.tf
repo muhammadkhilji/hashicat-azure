@@ -1,13 +1,9 @@
-
-resource "azurerm_resource_group" "example" {
+resource "azurerm_resource_group" "test" {
   name     = "my-resources"
   location = "West Europe"
 }
 
 module "network" {
-  source  = "app.terraform.io/KHILJI--training/network/azurerm"
-  version = "3.0.1"
-  resource_group_name = azurerm_resource_group.example.name
+  source              = "Azure/network/azurerm"
+  resource_group_name = azurerm_resource_group.test.name
 }
-
-depends_on = [azurerm_resource_group.example]
