@@ -4,6 +4,9 @@ resource "azurerm_resource_group" "test" {
 }
 
 module "network" {
-  source              = "Azure/network/azurerm"
-  resource_group_name = azurerm_resource_group.test.name
+  module "network" {
+  source  = "app.terraform.io/KHILJI--training/network/azurerm"
+  version = "3.0.1"
+  # insert required variables here
+}
 }
