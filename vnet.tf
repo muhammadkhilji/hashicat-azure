@@ -6,6 +6,6 @@ resource "azurerm_resource_group" "example" {
 
 module "network" {
   source  = "app.terraform.io/KHILJI--training/network/azurerm"
-  version = azurerm_resource_group.example.name
-  resource_group_name = "khiljm2"
+  version = "3.0.1"
+  resource_group_name = azurerm_resource_group.example.name
 }
